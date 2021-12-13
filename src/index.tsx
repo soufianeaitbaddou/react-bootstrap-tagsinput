@@ -68,7 +68,7 @@ export const InputTags = ({
     const isEndOfText = event.currentTarget.selectionEnd === currentValue.length
     const isPossibleRight =
       (isEndOfText || currentValue.length === 0) && terms.length > 0
-    if ((key === 'Enter' || key === ' ') && currentValue != '') {
+    if ((key === 'Enter' || key === 'Tab') && currentValue != '') {
       event.preventDefault()
       setTerms([...terms, currentValue])
       setValue('')
@@ -177,7 +177,7 @@ const Element = (props: ElementProps): JSX.Element => {
       ref={ref}
       tabIndex={0}
       className={classnames(
-        'badge bg-secondary bg-gradient mr-1 my-auto py-auto pr-0 ',
+        'badge bg-primary bg-gradient mr-1 my-auto py-auto pr-0 ',
         props.className
       )}
       onKeyUp={onkeydown}
